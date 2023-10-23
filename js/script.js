@@ -74,7 +74,7 @@ console.log(containerEl)
     //ci ho appeso un div e gli do la classe row
 const rowEl = document.createElement('div')
 containerEl.append(rowEl)
-rowEl.classList.add('row')
+rowEl.classList.add('row', 'd-felx', 'felx-nowrap')
 
     //console.log(rowEl)
 
@@ -82,7 +82,7 @@ rowEl.classList.add('row')
 for (i = 0; i < ourTeam.length; i++ ){
     const colEl = document.createElement('div')
     rowEl.append(colEl)
-    colEl.classList.add('col-4', 'card')
+    colEl.classList.add('col-4', 'card', 'm-2')
     colEl.innerHTML = ourTeam[i].name
     colEl.innerHTML += ourTeam[i].role
     colEl.innerHTML += `
@@ -91,8 +91,16 @@ for (i = 0; i < ourTeam.length; i++ ){
 
 }
 
-// bonus 
-// 3 input collegati ad un bottone 
+// Bonus
 
 
-// */
+const btn = document.querySelector('button')
+btn.addEventListener('click', function(){
+    const newMember = {
+        name : document.getElementById('ruolo').value,
+        role : document.getElementById('ruolo').value,
+        picture : document.getElementById('foto-user').value
+    }
+    console.log(newMember)
+    ourTeam.push(newMember)
+})
