@@ -56,24 +56,24 @@ const ourTeam = [
 // Milestone 1
 
 for (let i = 0; i < ourTeam.length; i++){
-    console.group()
-    console.log(ourTeam[i].name)
-    console.log(ourTeam[i].role)
-    console.log(ourTeam[i].picture)
-    console.groupEnd()
+    // console.group()
+    // console.log(ourTeam[i].name)
+    // console.log(ourTeam[i].role)
+    // console.log(ourTeam[i].picture)
+    // console.groupEnd()
 }
 
 
-// for (let i = 0; i<ourTeam.lenght; i++){
 
-//     console.log(ourTeam[i].nome)
-//     console.log(ourTeam[i].role)
-//     console.log(ourTeam[i].picture)
+// Milestone 2
 
-// }
-// milestone 2
-// ciclo for           
+const containerEl = document.querySelector('.container')
+console.log(containerEl)
 
+const rowEl = document.createElement('div')
+document.containerEl.append(rowEl)
+
+console.log(rowEl)
 
 
 // bonus 
