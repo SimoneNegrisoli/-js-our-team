@@ -18,7 +18,7 @@
 
 
 
-// milestone 0
+// Milestone 0
 const ourTeam = [
     {
         name: 'Wayne Barnett',
@@ -74,7 +74,7 @@ console.log(containerEl)
 //ci ho appeso un div e gli do la classe row
 const rowEl = document.createElement('div')
 containerEl.append(rowEl)
-rowEl.classList.add('row', 'd-felx', 'felx-nowrap')
+rowEl.classList.add('row')
 
 //console.log(rowEl)
 
@@ -84,29 +84,38 @@ for (i = 0; i < ourTeam.length; i++) {
     uploadMembers(ourTeam[i])
 }
 
-function uploadMembers() {
+function uploadMembers(member) {
     const colEl = document.createElement('div')
     rowEl.append(colEl)
-    colEl.classList.add('col-4', 'card', 'm-2')
-    colEl.innerHTML = ourTeam[i].name
-    colEl.innerHTML += ourTeam[i].role
-    colEl.innerHTML += `
-    <img src = img/${ourTeam[i].picture}>
-    
-    `
+    const myDiv = document.createElement('div')
+    colEl.append(myDiv)
+    colEl.classList.add('col-4')
+    myDiv.classList.add('d-flex', 'flex-column', 'align-items-center', 'mb-5' ,'justify-content-center', 'p-3', 'bg-white')
+    myDiv.innerHTML = `<h4 class="text-center">${ourTeam[i].name}</h4>`
+    myDiv.innerHTML += `<h6 class="text-center">${ourTeam[i].role}</h6>`
+    myDiv.innerHTML += `
+    <img src = img/${ourTeam[i].picture}>`
+   
 }
 
 // Bonus
 
 
 const btn = document.querySelector('button')
+btn.classList.add('mb-4')
 btn.addEventListener('click', function () {
     const newMember = {
-        name: document.getElementById('ruolo').value,
+        name: document.getElementById('nome').value,
         role: document.getElementById('ruolo').value,
         picture: document.getElementById('foto-user').value
     }
-    ourTeam.push(newMember)
-    uploadMembers(newMember)
+    ourTeam.push(newMember);
+    uploadMembers(newMember);
+    resetValue();
 })
-    
+
+function resetValue (){
+    document.getElementById('nome').value = '';
+    document.getElementById('ruolo').value = '';
+    document.getElementById('foto-user').value = '';
+}
