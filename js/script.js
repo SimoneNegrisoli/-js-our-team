@@ -53,9 +53,16 @@ const ourTeam = [
 
 ]
 
+// Milestone 1
 
+for (let i = 0; i < ourTeam.length; i++){
+    console.group()
+    console.log(ourTeam[i].name)
+    console.log(ourTeam[i].role)
+    console.log(ourTeam[i].picture)
+    console.groupEnd()
+}
 
-// milestone 1
 
 // for (let i = 0; i<ourTeam.lenght; i++){
 
