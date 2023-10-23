@@ -67,14 +67,23 @@ for (let i = 0; i < ourTeam.length; i++){
 
 // Milestone 2
 
+    //mi sono preso il contetiore 
 const containerEl = document.querySelector('.container')
 console.log(containerEl)
 
+    //ci ho appeso un div e gli do la classe row
 const rowEl = document.createElement('div')
-document.containerEl.append(rowEl)
+containerEl.append(rowEl)
+rowEl.classList.add('row')
 
-console.log(rowEl)
+    //console.log(rowEl)
 
+    //creo un ciclo for e stampo le informzazioni e aggiungo la classe col ai vari div
+for (i = 0; i < ourTeam.length; i++ ){
+    const colEl = document.createElement('div')
+    rowEl.append(colEl)
+    colEl.classList.add('col-4')
+}
 
 // bonus 
 // 3 input collegati ad un bottone 
