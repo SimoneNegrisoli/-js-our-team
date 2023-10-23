@@ -10,3 +10,9 @@ body{
 img{
     width: 50%;
 }
+p{
+    width: 50%;
+    margin: 0 auto;
+    font-weight: lighter;
+    font-size: 0.8rem;
+}
