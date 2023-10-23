@@ -82,7 +82,13 @@ rowEl.classList.add('row')
 for (i = 0; i < ourTeam.length; i++ ){
     const colEl = document.createElement('div')
     rowEl.append(colEl)
-    colEl.classList.add('col-4')
+    colEl.classList.add('col-4', 'card')
+    colEl.innerHTML = ourTeam[i].name
+    colEl.innerHTML += ourTeam[i].role
+    colEl.innerHTML += `
+    <img src = img/${ourTeam[i].picture}>
+    `
+
 }
 
 // bonus 
