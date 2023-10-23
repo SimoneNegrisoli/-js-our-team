@@ -21,33 +21,33 @@
 // milestone 0
 const ourTeam = [
     {
-        name : 'Wayne Barnett',
-        role : 'Founder & CEO',
+        name: 'Wayne Barnett',
+        role: 'Founder & CEO',
         picture: 'wayne-barnett-founder-ceo.jpg'
     },
     {
-        name : 'Angela Caroll',
-        role : 'Chief Editor',
+        name: 'Angela Caroll',
+        role: 'Chief Editor',
         picture: 'angela-caroll-chief-editor.jpg'
     },
     {
-        name : 'Walter Gordon',
-        role : 'Office Manager',
+        name: 'Walter Gordon',
+        role: 'Office Manager',
         picture: 'walter-gordon-office-manager.jpg'
     },
     {
-        name : 'Angela Lopez',
-        role : 'Social Media Manager',
+        name: 'Angela Lopez',
+        role: 'Social Media Manager',
         picture: 'angela-lopez-social-media-manager.jpg'
     },
     {
-        name : 'Scott Estrada',
-        role : 'Developer',
+        name: 'Scott Estrada',
+        role: 'Developer',
         picture: 'scott-estrada-developer.jpg'
     },
     {
-        name : 'Barbara Ramos',
-        role : 'Graphic Designer',
+        name: 'Barbara Ramos',
+        role: 'Graphic Designer',
         picture: 'barbara-ramos-graphic-designer.jpg'
     }
 
@@ -55,7 +55,7 @@ const ourTeam = [
 
 // Milestone 1
 
-for (let i = 0; i < ourTeam.length; i++){
+for (let i = 0; i < ourTeam.length; i++) {
     // console.group()
     // console.log(ourTeam[i].name)
     // console.log(ourTeam[i].role)
@@ -67,19 +67,24 @@ for (let i = 0; i < ourTeam.length; i++){
 
 // Milestone 2
 
-    //mi sono preso il contetiore 
+//mi sono preso il contetiore 
 const containerEl = document.querySelector('.container')
 console.log(containerEl)
 
-    //ci ho appeso un div e gli do la classe row
+//ci ho appeso un div e gli do la classe row
 const rowEl = document.createElement('div')
 containerEl.append(rowEl)
 rowEl.classList.add('row', 'd-felx', 'felx-nowrap')
 
-    //console.log(rowEl)
+//console.log(rowEl)
 
-    //creo un ciclo for e stampo le informzazioni e aggiungo la classe col ai vari div
-for (i = 0; i < ourTeam.length; i++ ){
+//creo un ciclo for e stampo le informzazioni e aggiungo la classe col ai vari div, ci faccio una funzione
+
+for (i = 0; i < ourTeam.length; i++) {
+    uploadMembers(ourTeam[i])
+}
+
+function uploadMembers() {
     const colEl = document.createElement('div')
     rowEl.append(colEl)
     colEl.classList.add('col-4', 'card', 'm-2')
@@ -87,20 +92,21 @@ for (i = 0; i < ourTeam.length; i++ ){
     colEl.innerHTML += ourTeam[i].role
     colEl.innerHTML += `
     <img src = img/${ourTeam[i].picture}>
+    
     `
-
 }
 
 // Bonus
 
 
 const btn = document.querySelector('button')
-btn.addEventListener('click', function(){
+btn.addEventListener('click', function () {
     const newMember = {
-        name : document.getElementById('ruolo').value,
-        role : document.getElementById('ruolo').value,
-        picture : document.getElementById('foto-user').value
+        name: document.getElementById('ruolo').value,
+        role: document.getElementById('ruolo').value,
+        picture: document.getElementById('foto-user').value
     }
-    console.log(newMember)
     ourTeam.push(newMember)
+    uploadMembers(newMember)
 })
+    
